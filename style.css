@@ -1,0 +1,224 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*
+    General Classes
+  */
+
+:root {
+  --Cyan: hsl(179, 62%, 43%);
+  --Light-cyan: hsl(179, 77%, 44%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+  --Body-font: "Karla", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--Light-Gray);
+  font-family: var(--Body-font);
+  padding: 2rem;
+  max-width: 100%;
+  color: white;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+strong,
+em {
+  font-style: normal;
+}
+
+/*
+    Card Styles
+  */
+
+h1 {
+  color: var(--Cyan);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+p,
+em,
+a {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+p {
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  min-height: 100vh;
+  place-content: center;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 9px;
+  max-width: 63rem;
+}
+
+.info-card {
+  padding: 2.7rem;
+}
+
+.info-1 {
+  background-color: white;
+}
+
+.info-1 h2 {
+  color: var(--Bright-Yellow);
+}
+
+.info-1 p {
+  color: var(--Grayish-Blue);
+}
+
+.info-2 {
+  background-color: var(--Cyan);
+}
+
+.price-time {
+  align-items: center;
+  margin-bottom: 1.5;
+  gap: 1.2rem;
+}
+
+.info-2 strong {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+}
+
+.info-2 em {
+  color: var(--Light-Gray);
+  font-weight: 400;
+}
+
+.cta {
+  place-content: center;
+  background-color: var(--Bright-Yellow);
+  padding: 1.2rem;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.084);
+  margin-top: 3rem;
+}
+
+.cta a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+}
+
+.info-3 {
+  background-color: var(--Light-cyan);
+}
+
+.info-3 p {
+  margin-right: 10rem;
+}
+
+/*
+    Media Query
+  */
+
+@media (min-width: 600px) {
+  .card {
+    background-color: var(--Cyan);
+  }
+
+  .info.grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .info-1 {
+    grid-column: 1 / 3;
+  }
+}
